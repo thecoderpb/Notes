@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        db = new DatabaseHelper(this);
+        db = new DatabaseHelper(MainActivity.this);
 
         notesList.clear();
 
@@ -135,15 +135,18 @@ public class MainActivity extends AppCompatActivity
 
         int id = item.getItemId();
 
-        if (id == R.id.notesCount) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+         if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_slideshow) {
+             Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+             sharingIntent.setType("text/plain");
+             sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, "My amazing Notes App");
+             sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "My amazing Notes App");
+             startActivity(Intent.createChooser(sharingIntent, "Share using"));
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_info) {
 
-        } else if (id == R.id.nav_send) {
+             Intent intent = new Intent(MainActivity.this,AboutActivity.class);
+             startActivity(intent);
 
         }
 
@@ -228,17 +231,6 @@ public class MainActivity extends AppCompatActivity
 
         notesList.set(position, n);
         adapter.notifyItemChanged(position);
-
-        toggleEmptyNotes();
-    }
-
-    private void deleteNote(int position) {
-        // deleting the note from db
-        db.deleteNote(notesList.get(position));
-
-        // removing the note from the list
-        notesList.remove(position);
-        adapter.notifyItemRemoved(position);
 
         toggleEmptyNotes();
     }

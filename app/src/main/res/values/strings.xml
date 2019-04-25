@@ -17,17 +17,17 @@
     <string name="skip">SKIP</string>
     <string name="start">GOT IT</string>
 
-    <string name="slide_1_title">Productize</string>
-    <string name="slide_1_desc">Productivity|Priority</string>
+    <string name="slide_1_title">Notes</string>
+    <string name="slide_1_desc">Your go to Notes app</string>
 
-    <string name="slide_2_title">Productize</string>
-    <string name="slide_2_desc">Productivity|Priority</string>
+    <string name="slide_2_title">Add Notes</string>
+    <string name="slide_2_desc">Create notes anytime, anywhere</string>
 
-    <string name="slide_3_title">Productize</string>
-    <string name="slide_3_desc">Productivity|Priority</string>
+    <string name="slide_3_title">Edit And Delete Notes</string>
+    <string name="slide_3_desc">Modifying your saved note has never been more easy</string>
 
-    <string name="slide_4_title">Productize</string>
-    <string name="slide_4_desc">Productivity|Priority</string>
+    <string name="slide_4_title">Lets Go</string>
+    <string name="slide_4_desc">Start making notes Now!!</string>
 
     <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> Productize -> clear data</string>
     <string name="play_again">Play Again</string>

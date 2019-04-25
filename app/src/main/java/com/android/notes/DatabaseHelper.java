@@ -12,7 +12,7 @@ import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     private static final String DATABASE_NAME = "notes_db";
 
@@ -86,7 +86,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String selectQuery = "SELECT  * FROM " + NotesDB.TABLE_NAME + " ORDER BY " +
                 NotesDB.COLUMN_TIMESTAMP + " DESC";
 
-        SQLiteDatabase db = this.getWritableDatabase();
+        SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 
         if (cursor.moveToFirst()) {

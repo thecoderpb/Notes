@@ -64,7 +64,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         myViewHolder.editReminderImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int position = recyclerView.getChildPosition(view);
+                int position = recyclerView.getChildAdapterPosition(view);
                 String value = notesDBList.get(position).getNote();
                 Intent intent = new Intent(context,EditActivity.class);
                 intent.putExtra("editVal",value);
@@ -89,7 +89,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public int getItemCount() {
-        return notesDBList.size();
+        return notesDBList.size(    );
     }
 
     private String formatDate(String dateStr) {
